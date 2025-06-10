@@ -1,0 +1,33 @@
+
+== Struttura della tabella likes
+
+
+|//**like_id**//|int(11)|No|
+|**id**|int(11)|Sì|NULL
+|**id_modello**|int(11)|Sì|NULL
+|**id_utente**|int(11)|Sì|NULL
+|data_like|date|Sì|NULL
+== Dump dei dati per la tabella likes
+
+
+CREATE TABLE modelli (
+  id_modello INT AUTO_INCREMENT PRIMARY KEY,
+  id INT,
+  nome_modello VARCHAR(255),
+  data_pubblicazione DATE DEFAULT CURRENT_DATE,
+  numero_like INT DEFAULT 0,
+  FOREIGN KEY (id) REFERENCES utenti(id)
+);
+
+
+
+== Struttura della tabella utenti
+
+
+|//**id**//|int(11)|No|
+|email|varchar(255)|Sì|NULL
+|username|varchar(255)|Sì|NULL
+|user_password|varchar(255)|Sì|NULL
+|data_registrazione|date|Sì|current_timestamp()
+== Dump dei dati per la tabella utenti
+
